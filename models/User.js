@@ -20,6 +20,23 @@ const UserSchema = new mongoose.Schema({
   
 });
 
-const User = mongoose.model('User', UserSchema);
+const UserSchema2 = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true
+  },
+  bucketname: {
+    type: String,
+    required: true
+  },
+  filename: {
+    type: String,
+    required: true
+  }  
+});
 
-module.exports = User;
+const User = mongoose.model('User', UserSchema);
+const Userbucket = mongoose.model('Userbucket', UserSchema2);
+
+module.exports.User = User;
+module.exports.Userbucket = Userbucket;

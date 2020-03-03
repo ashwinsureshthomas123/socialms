@@ -2,16 +2,10 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
-const aws = require('aws-sdk')
-const awskey = require('../config/aws.json')
-aws.config.update({
-  secretAccessKey: awskey.secretAccessKey,
-  accessKeyId: awskey.accessKeyId,
-  region: awskey.region
-})
 
 // Load User model
-const User = require('../models/User');
+const Userinfo = require('../models/User');
+const User = Userinfo.User;
 const { forwardAuthenticated } = require('../config/auth');
 
 // Login Page
@@ -62,6 +56,7 @@ router.post('/register', (req, res) => {
           email,
           password,
         });
+        
         
 
         bcrypt.genSalt(10, (err, salt) => {
