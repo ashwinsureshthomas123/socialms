@@ -7,7 +7,7 @@ const session = require('express-session');
 
 
 const app = express();
-
+console.log("hello");
 // Passport Config
 require('./config/passport')(passport);
 
