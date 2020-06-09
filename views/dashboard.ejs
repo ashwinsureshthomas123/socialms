@@ -20,22 +20,30 @@
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">LOGOUT</button>
     </form>
   </div>
-  <form class="form-inline my-2 my-lg-0" action="/file/upload">
-    <button class="btn btn-success" type="submit">Upload</button>
+  <form class="form-inline my-2 my-lg-0" action="http://localhost:2000">
+    <button class="btn btn-success" type="submit">cloud</button>
   </form>
 </nav>
 <div class="card mb-3">
   <h3 class="card-header"></h3>
   <div class="card-body">
-    <h5 class="card-title"><%=user.name%></h5>
+    <h5 class="card-title">hello <%=user.name%></h5>
     <h6 class="card-subtitle text-muted">Support card subtitle</h6>
   </div>
-  
-  <img style="height: 200px; width: 100%; display: block;" src="<%=bucketlink%>">
   <div class="card-footer text-muted">
     2 days ago
   </div>
   <div class="card-body">
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
+  </div>
+  <div>
+    <ul class="list-unstyled">
+      <% bucketlink.map((pic) => {
+        %>
+        <li><img src="<%=pic%>" width="500" height="300" class="img-thumbnail" alt="no image"></li>
+          <br>
+        <%
+      }) %>
+    </ul>
   </div>

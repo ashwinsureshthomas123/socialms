@@ -26,6 +26,8 @@ mongoose
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
+
+
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
 
@@ -57,6 +59,8 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
 app.use('/file', require('./routes/file-upload.js'));
+app.use("/cloud",require("./routes/cloud.js"))
+app.use('/api', require('./routes/api.js'));
 
 const PORT = process.env.PORT || 5000;
 

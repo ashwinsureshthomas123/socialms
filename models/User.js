@@ -25,14 +25,10 @@ const UserSchema2 = new mongoose.Schema({
     type: String,
     required: true
   },
-  bucketname: {
+  bucketlink: {
     type: String,
     required: true
-  },
-  filename: {
-    type: String,
-    required: true
-  }  
+  }, 
 });
 
 const User = mongoose.model('User', UserSchema);
